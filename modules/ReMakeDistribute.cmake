@@ -146,6 +146,7 @@ macro(remake_distribute_deb)
   remake_set(distribute_pass SELF
     DEFAULT CMAKE_BUILD_TYPE CMAKE_INSTALL_PREFIX CMAKE_INSTALL_RPATH)
   remake_set(distribute_exclude SELF DEFAULT /debian/)
+  remake_set(distribute_force_consistency TRUE)
 
   remake_file_read(distribute_changelog_content ${distribute_changelog})
   string(REGEX REPLACE "([^\\\n]+).*" "\\1" distribute_changelog_header
